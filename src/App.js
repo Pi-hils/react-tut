@@ -3,18 +3,12 @@ import HelloWorld from './Components/HelloWorld'
 
 function App() {
 
-  var myName = "Hils"
-
-  function alertingNames(){
-    alert(myName)
-  }
   return (
     <div className="App">
-    <h1>Hello there, {myName}</h1>
-    <HelloWorld />
-    
-    <button onClick={alertingNames}>Click Me</button>
-    <HelloWorld />
+    <h1>Hello there!</h1>
+    <HelloWorld name="Hils" email="girlCoder@techworld.com" role="Fullstack dev"/>
+    <HelloWorld name="Mari" email="girlTherapist@therapist.com" role="Child Therapist"/>
+    <HelloWorld name="Pels" email="girlBoss@bossorld.com" role="CPO"/>
     </div>
   );
 }
