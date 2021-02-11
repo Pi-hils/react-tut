@@ -1,21 +1,20 @@
 import React from 'react';
-
+import HelloWorld from './Components/HelloWorld'
 
 function App() {
 
-  var myName="Hilda Amponsah"
+  var myName = "Hils"
 
   function alertingNames(){
-    alert(myName);
+    alert(myName)
   }
-
   return (
     <div className="App">
+    <h1>Hello there, {myName}</h1>
+    <HelloWorld />
+    
     <button onClick={alertingNames}>Click Me</button>
-    <br></br>
-    <input type='text' />
-    <br></br>
-    <h1>Hello World, my name is {myName}</h1>
+    <HelloWorld />
     </div>
   );
 }
