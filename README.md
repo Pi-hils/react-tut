@@ -35,3 +35,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/m
 ### Deployment
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+
+## Creating a backend
+- `mkdir sever`
+- `cd server`
+- Run `npm init` for package.json (click 'yes' for all)
+- create `index.js` 
+To add express and body parser
+- `npm install express body-parser psql`
+- `npm install nodemon` (to keep you from refreshing)
+To create Express server 
+Go to index.js (server) and add 
+```
+const express = require()
