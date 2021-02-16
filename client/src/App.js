@@ -7,6 +7,14 @@ function App() {
   const [meal_name, setMeal_name] = useState('')
   const [review, setReview] = useState('')
 
+  const submitReview = () =>{
+    Axios.post("http://localhost:3001/api/insert", {
+      meal_name:meal_name, 
+      review: review
+    }).then(()=>{
+      alert('Has been inserted')
+    })
+  };
   return (
     <div className="App">
     <h1>Hello there!</h1>
@@ -21,7 +29,7 @@ function App() {
           setReview(e.target.value)
         }}/>
 
-      <button>Submit</button>
+      <button onClick={submitReview}>Submit</button>
     </div>
     </div>
   );

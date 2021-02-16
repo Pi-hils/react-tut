@@ -104,3 +104,29 @@ client.connect();
   - Go to client -> src -> App.js --> set states
   - Add useState and userEffect inside your React import
   - Install Axios get get your own API(making API request to our database), run `npm i axios`
+  - Add `import Axios from "axios";` at the top
+  - Make post request on the submit
+  - Add your post request to index.js and change path to /api/insert
+  ```
+  app.post("/api/insert", (req,res) => {
+  const psqlInsert = "INSERT INTO meal_reviews(meal_name, review) VALUES(?,?);"
+  client.query(psqlInsert, [meal_name, review], (err, result)=> {
+
+  });
+ });
+```
+
+- in App.js, make changes to your submit button
+```
+ const submitReview = () =>{
+    Axios.post("http://localhost:3001/api/insert", {
+      meal_name:meal_name, 
+      review: review
+    }).then(()=>{
+      alert('Has been inserted')
+    })
+  };
+  ```
+
+  - Add `const bodyParser = require('body-parser);` to index.js
+  - cd server and install CORS `npm install cors`, in index.js, add add cors and app.use(express.json())
