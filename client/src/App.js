@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState }  from 'react';
+// import React, from 'react';
 import "./App.css";
 
 function App() {
+
+  const [meal_review, setMeal_review] = useState('')
+  const [review, setReview] = useState('')
+
   return (
     <div className="App">
     <h1>Hello there!</h1>
