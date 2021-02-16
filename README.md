@@ -57,4 +57,12 @@ add to the script..
     "devStart": "nodemon index.js", 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  ```
+```
+- Run `npm run devStart` in the cmmdline
+
+Accessing psql/
+On commandline, type psql
+- CREATE DATABASE "NAME OF DATABASE"
+On tablePlus
+- fill in the parts on the form, username (hilda.amp), databasename = "NAME OF DATABASE IN PSQL"
+
