@@ -44,6 +44,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 - create `index.js` 
 To add express and body parser
 - `npm install express body-parser psql`
+- Run `npm i pg`
 - `npm install nodemon` (to keep you from refreshing)
 To create Express server 
 Go to index.js (server) and add 
@@ -60,9 +61,44 @@ add to the script..
 ```
 - Run `npm run devStart` in the cmmdline
 
-Accessing psql/
+Accessing psql\
 On commandline, type psql
 - CREATE DATABASE "NAME OF DATABASE"
+- \c "NAME OF DB" + CREATE TABLE meal_reviews(id SERIAL PRIMARY KEY, meal_name VARCHAR(100),review TEXT);
 On tablePlus
 - fill in the parts on the form, username (hilda.amp), databasename = "NAME OF DATABASE IN PSQL"
+<br>
+In index.js(server), add to the top
+```
+const { Client } = require('pg');
 
+const client = new Client({
+  host: "localhost",
+  port: 5432,
+  user: "postgres",
+  password: "password",
+  database: "mealReview"
+});
+
+client.connect();
+```
+
+```
+  //  app.get('/', (req,res) => {
+     const psqlInsert = "INSERT INTO meal_reviews(meal_name, review) VALUES('red velvet cupcake','Awesome');"
+    // client.query("select * from meal_reviews",(err,result) => {
+    client.query(psqlInsert, (err, result)=> {
+
+    // when movie is inserted, write Hello Hilda
+    if(!err){
+      console.log(result.rows);
+    }
+    client.end();
+  //  res.send("Hello there!!");
+   })
+
+
+  // });
+  ```
+  Client and Service interaction
+  - Go to client -> src -> App.js --> set states
