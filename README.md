@@ -47,5 +47,14 @@ To add express and body parser
 - `npm install nodemon` (to keep you from refreshing)
 To create Express server 
 Go to index.js (server) and add 
-```
+In index.js, add\
 const express = require()
+In package.json
+add to the script..
+```
+  "scripts": {
+    "start": "node index.js",
+    "devStart": "nodemon index.js", 
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  ```
